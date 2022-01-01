@@ -52,6 +52,36 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    overflow-y: hidden;
+}
+
+.wrapper {
+    transform:rotate(-90deg) translateY(-300px);
+    transform-origin: right top ;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    direction: rtl;
+    position: relative;
+    overflow: visible;
+}
+
+.item {
+    transform: rotate(90deg);
+    background-color: lightskyblue;
+    outline: 2px solid black;
+    width: 300px;
+    height: 300px;
+    direction: ltr;
+    position: relative;
+    bottom: 766px;
+    left: 330px;
+}
+
+
 /*
 =======================
 Helper Classes

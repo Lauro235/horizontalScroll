@@ -12,4 +12,6 @@ Wish me luck!
 
 ### Resources
 
+- horizontal scrolling CSS tricks <https://css-tricks.com/pure-css-horizontal-scrolling/>
+
 ### Explorations
