@@ -1,0 +1,7 @@
+Make HTML Start up file
+Link to CSS
+Update HTML title
+Create base CSS
+Connect js to HTML
+Add Images to folder
+Create skeleton HTML
