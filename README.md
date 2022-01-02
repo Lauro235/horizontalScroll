@@ -13,5 +13,59 @@ Wish me luck!
 ### Resources
 
 - horizontal scrolling CSS tricks <https://css-tricks.com/pure-css-horizontal-scrolling/>
+- horizontal scrolling hubspot <https://blog.hubspot.com/website/horizontal-scrolling>
 
 ### Explorations
+
+#### Attempt 1
+
+`
+
+.wrapper {
+    transform: rotate(90deg);
+    overflow-y: scroll;
+}
+
+.item {
+    transform: rotate(-90deg);
+}
+
+`
+
+Problem with this is that the size of the .items seem to be getting cut by the wrapper element. Even though both wrapper element and child divs width match the child divs are not taking up their full space.
+
+When you apply flex with direction row. You can see the children as one column. You can read the text for each however the first 5 items are cut.
+
+#### Attempt 2
+
+`
+
+body {
+    overflow-y: hidden;
+}
+
+.wrapper {
+    background-color: beige;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.item {
+    background-color: lightskyblue;
+    outline: 2px solid black;
+    width: 100vw;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+`
+
+In this situation no transform has been used however the width of the container has a higher priority than the width of the individual items. This is possibly due to the way that flex works. It shrinks its items down as much as possible to avoid overflow. Perhaps there's a way to remove this feature? The flex shrink feature worked really well for this. Just apply it to the item.
+
+Last issue with the current design is that it uses a horizontal scroll and not a vertical scroll to go from left to right. Positive parts about the design is that it's is fully responsive due to the measurements of the browser being transferred over to the container and children.
+
+At some point I'd like to build off of this to create the vertical scroll and assign it to the left to right action.
