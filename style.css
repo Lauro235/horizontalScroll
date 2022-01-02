@@ -82,14 +82,45 @@ body {
     align-items: center;
     font-size: 40px;
 }
+.num1 {
+    background-image: url('images/jackson-hendry-eodA_8CTOFo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.num2 {
+    background-image: url('images/kazuend-2KXEb_8G5vo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.num3 {
+    background-image: url('images/manuel-will-gd3t5Dtbwkw-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+.num4 {
+    background-image: url('images/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+.num5 {
+    background-image: url('images/wil-stewart-T26KCgCPsCI-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 80%;
+}
+
+
 
 /* .item+.item {
     margin: 1em 0;
 } */
 
-.item:last-child {
+/* .item:last-child {
     margin: 0;
-}
+} */
 
 /*
 =======================
