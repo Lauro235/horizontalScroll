@@ -1,44 +1,33 @@
 // x = horizontal
 // y = vertical
 
+/* 
+
+======================================================
+Convert vertical to horizontal scrolling start
+
+https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
+
+*/
+
 const wrapper = document.querySelector(".wrapper");
 const wrapperWidth = wrapper.scrollWidth;
 console.log(wrapperWidth);
-const item = document.querySelector(".num1");
-const itemWidth = item.scrollWidth;
-console.log(wrapperWidth);
 
-window.onload = function () {
-  window.onscroll = function () {
-    var doc = document.body,
-      scrollPosition = doc.scrollLeft;
-    console.log(scrollPosition);
-    //   pageSize = doc.scrollHeight - doc.clientHeight,
-    //   percentageScrolled = Math.floor((scrollPosition / pageSize) * 100);
-    let leftScroll;
-    for (
-      scrollPosition = 0;
-      scrollPosition < wrapper.scrollWidth;
-      scrollPosition++
-    ) {
-      leftScroll = window.scrollTo(0, scrollPosition);
-    }
-    // if (percentageScrolled == 0) {
-    //   // if the percentage is >= 50, scroll to top
-    // }
-  };
-};
+const transformScroll = (e) => {
+  // console.log(wrapper.scrollLeft);
+  e.preventDefault();
+  wrapper.scrollLeft += e.deltaY;
+}
 
-// const transformScroll = (e) => {
-//   if(e.deltaY) {
-//     console.log(e.deltaY, 'you have scrolled down');
-//     return;
-//   }
-//   let leftScroll = e.scrollLeft += e.deltaY;
-// }
+wrapper.addEventListener('wheel', transformScroll)
 
-// let element = document.scrollingElement || document.documentElement;
-// element.addEventListener('wheel', transformScroll)
+/* 
+
+Convert vertical to horizontal scrolling end
+======================================================
+
+*/
 
 // let browserWindowY = window.innerHeight;
 // let browserWindowX = window.innerWidth;
