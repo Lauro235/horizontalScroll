@@ -8,6 +8,8 @@ Convert vertical to horizontal scrolling start
 
 https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
 
+NOTE: drawback is that one cannot apply the scroll-behaviour: smooth; setting in CSS on the wrapper element
+
 */
 
 const wrapper = document.querySelector(".wrapper");
@@ -17,7 +19,12 @@ console.log(wrapperWidth);
 const transformScroll = (e) => {
   // console.log(wrapper.scrollLeft);
   e.preventDefault();
-  wrapper.scrollLeft += e.deltaY;
+  // wrapper.scrollLeft += e.deltaY;
+  wrapper.scrollTo({
+    top: 0,
+    left: wrapper.scrollLeft += e.deltaY,
+    behavior: 'smooth',
+  })
 }
 
 wrapper.addEventListener('wheel', transformScroll)
