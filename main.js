@@ -10,6 +10,8 @@ https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
 
 NOTE: drawback is that one cannot apply the scroll-behaviour: smooth; setting in CSS on the wrapper element
 
+Solution below feeds object into scrollTo that allows for smooth scrolling
+
 */
 
 const wrapper = document.querySelector(".wrapper");
