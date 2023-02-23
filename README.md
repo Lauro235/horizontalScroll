@@ -1,10 +1,8 @@
-# Learn In Public Series
+# horizontalScroll
 
-## horizontalScroll
+## Purpose of project
 
-### Goals and Intent
-
-In this project I learnt how to make a parallel scrolling website.
+In this project I learnt how to make a horizontal scrolling website.
 
 ### Resources
 
