@@ -4,11 +4,7 @@
 
 ### Goals and Intent
 
-I would like to learn how to make a parallel scrolling website. I believe this is possible with CSS however I remember bumping into an instance where the parents width and height had to exactly match the width and height of it's children. This was a problem for me as I wanted the whole website to take up the whole of the browser window.
-
-After my recent success in discovering how to apply a width and height to an element I thought I might be ready to give this a go. This project will be more JavaScript intensive as I hope to also use the button blur technique alongside the parallel scrolling idea...
-
-Wish me luck!
+In this project I learnt how to make a parallel scrolling website.
 
 ### Resources
 
@@ -18,63 +14,33 @@ Wish me luck!
 - mdn client width <https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth>
 - mdn resize observer <https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver>
 
-### Explorations
+### Method
 
-#### Attempt 1
+1. Create a flex wrapper with height and width of 100vh/vw
+2. Create nested div with the following CSS values
+  - display: flex;
+  - width: 100vw;
+  - flex-shrink: 0;
+Flex will set all inner contents side by side horizontally.
+100vw will ensure that the contents of the div take up all screen width
+flex-shrink: 0; ensures that each child component individually takes up full screen width (individual children are not shrunk so that all children are within the screen, rather overflow takes place)
+3. Place some content in the nested div...
+4. Finally let's add the js. We will
+  - Target the wrapper element
+  - add a scroll event listener  
+  `wrapper.addEventListener('wheel', transformScroll);`
+5. Pass in call back
+  - prevent default bevhaviour
+  - leverage scrollTo()
+  - pass in options
+    ```js
+    {
+      top: 0,
+      left: wrapper.scrollLeft += e.deltaY,
+      behavior: 'smooth',
+    }
+    ```
 
-`
+You will notice that the value of wrapper.scrollLeft + window.innerWidth is equal to wrapper.scrollWidth.
 
-.wrapper {
-    transform: rotate(90deg);
-    overflow-y: scroll;
-}
-
-.item {
-    transform: rotate(-90deg);
-}
-
-`
-
-Problem with this is that the size of the .items seem to be getting cut by the wrapper element. Even though both wrapper element and child divs width match the child divs are not taking up their full space.
-
-When you apply flex with direction row. You can see the children as one column. You can read the text for each however the first 5 items are cut.
-
-#### Attempt 2
-
-`
-
-body {
-    overflow-y: hidden;
-}
-
-.wrapper {
-    background-color: beige;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-}
-
-.item {
-    background-color: lightskyblue;
-    outline: 2px solid black;
-    width: 100vw;
-    height: 100%;
-    flex-shrink: 0;
-}
-
-`
-
-In this situation no transform has been used however the width of the container has a higher priority than the width of the individual items. This is possibly due to the way that flex works. It shrinks its items down as much as possible to avoid overflow. Perhaps there's a way to remove this feature? The flex shrink feature worked really well for this. Just apply it to the item.
-
-Last issue with the current design is that it uses a horizontal scroll and not a vertical scroll to go from left to right. Positive parts about the design is that it's is fully responsive due to the measurements of the browser being transferred over to the container and children.
-
-At some point I'd like to build off of this to create the vertical scroll and assign it to the left to right action.
-
-### Adding a button to move to the next picture
-
-Method/to do
-
-- create variable called scrollPoint and set to 0 which tracks how far in pixels the scroll is
+scrollLeft takes you as far as it can go, but scrollWidth includes the innerWidth to. It takes you to the end of all content.
