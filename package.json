@@ -1,0 +1,21 @@
+{
+  "name": "horizontalscroll",
+  "version": "1.0.0",
+  "description": "## horizontalScroll",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lauro235/horizontalScroll.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lauro235/horizontalScroll/issues"
+  },
+  "homepage": "https://github.com/Lauro235/horizontalScroll#readme"
+}

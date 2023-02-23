@@ -14,6 +14,9 @@ Wish me luck!
 
 - horizontal scrolling CSS tricks <https://css-tricks.com/pure-css-horizontal-scrolling/>
 - horizontal scrolling hubspot <https://blog.hubspot.com/website/horizontal-scrolling>
+- digital ocean <https://www.digitalocean.com/community/tutorials/implementing-a-scroll-based-animation-with-javascript>
+- mdn client width <https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth>
+- mdn resize observer <https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver>
 
 ### Explorations
 
@@ -69,3 +72,9 @@ In this situation no transform has been used however the width of the container 
 Last issue with the current design is that it uses a horizontal scroll and not a vertical scroll to go from left to right. Positive parts about the design is that it's is fully responsive due to the measurements of the browser being transferred over to the container and children.
 
 At some point I'd like to build off of this to create the vertical scroll and assign it to the left to right action.
+
+### Adding a button to move to the next picture
+
+Method/to do
+
+- create variable called scrollPoint and set to 0 which tracks how far in pixels the scroll is

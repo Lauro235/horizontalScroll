@@ -58,10 +58,7 @@ body {
 
 .wrapper {
     background-color: beige;
-    /* transform: scale(1); */
-    /* transform: rotate(90deg); */
     overflow-y: hidden;
-    overflow-x: scroll;
     display: flex;
     flex-direction: row;
     width: 100vw;
@@ -72,44 +69,88 @@ body {
     background-color: lightskyblue;
     outline: 2px solid black;
     transform: scale(1); 
-    /* transform: rotate(-90deg);
-    /* margin: 0; */
     width: 100vw;
     height: 100%;
     flex-shrink: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 40px;
 }
+
+button {
+    z-index: 1;
+}
+
+/* https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=371&q=80
+
+https://images.unsplash.com/photo-1515705576963-95cad62945b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+
+https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+
+https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1151&q=80
+
+
+
+1. images/jackson-hendry-eodA_8CTOFo-unsplash.jpg
+2. images/kazuend-2KXEb_8G5vo-unsplash.jpg
+3. images/manuel-will-gd3t5Dtbwkw-unsplash.jpg
+4. images/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg
+5. images/wil-stewart-T26KCgCPsCI-unsplash.jpg
+*/
+
 .num1 {
-    background-image: url('images/jackson-hendry-eodA_8CTOFo-unsplash.jpg');
+    background-image: url('https://images.unsplash.com/photo-1626586862309-8a847999b337?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1910&q=80');
     background-repeat: no-repeat;
     background-size: cover;
 }
 .num2 {
-    background-image: url('images/kazuend-2KXEb_8G5vo-unsplash.jpg');
+    background-image: url('https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1151&q=80');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .num3 {
-    background-image: url('images/manuel-will-gd3t5Dtbwkw-unsplash.jpg');
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
 .num4 {
-    background-image: url('images/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg');
+    background-image: url('https://images.unsplash.com/photo-1494253188410-ff0cdea5499e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
 .num5 {
-    background-image: url('images/wil-stewart-T26KCgCPsCI-unsplash.jpg');
+    background-image: url('https://images.unsplash.com/photo-1515705576963-95cad62945b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 80%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  padding: 1em;
+  z-index: -1;
+}
+
+.text-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  /* padding: 1em; */
+  text-align: center;
+}
+
+.text-wrapper h2, p {
+  color: white;
+  padding: .5em;
 }
 
 

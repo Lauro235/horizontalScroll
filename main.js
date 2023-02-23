@@ -1,17 +1,39 @@
 // x = horizontal
 // y = vertical
 
-let browserWindowY = window.innerHeight;
-let browserWindowX = window.innerWidth;
+/* 
 
-const container = document.querySelector('.wrapper');
-const items = document.querySelectorAll('.item')
+======================================================
+Convert vertical to horizontal scrolling start
 
-function assignWindowSize() {
-    container.style.width = window.innerWidth + 'px';
-    container.style.height = window.innerHeight + 'px';
-    items.forEach(e => e.style.width = window.innerWidth + 'px');
-    items.forEach(e => e.style.height = window.innerHeight + 'px');
+https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/
+
+NOTE: drawback is that one cannot apply the scroll-behaviour: smooth; setting in CSS on the wrapper element
+
+Solution below feeds object into scrollTo that allows for smooth scrolling
+
+*/
+
+const wrapper = document.querySelector(".wrapper");
+const wrapperWidth = wrapper.scrollWidth;
+console.log(wrapperWidth);
+
+const transformScroll = (e) => {
+  // console.log(wrapper.scrollLeft);
+  e.preventDefault();
+  // wrapper.scrollLeft += e.deltaY;
+  wrapper.scrollTo({
+    top: 0,
+    left: wrapper.scrollLeft += e.deltaY,
+    behavior: 'smooth',
+  })
 }
 
-window.onresize = assignWindowSize;
+wrapper.addEventListener('wheel', transformScroll)
+
+/* 
+
+Convert vertical to horizontal scrolling end
+======================================================
+
+*/
