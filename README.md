@@ -4,6 +4,8 @@
 
 In this project I learnt how to make a horizontal scrolling website.
 
+## [See the project](https://lauro235.github.io/horizontalScroll/)
+
 ### Resources
 
 - horizontal scrolling CSS tricks <https://css-tricks.com/pure-css-horizontal-scrolling/>
